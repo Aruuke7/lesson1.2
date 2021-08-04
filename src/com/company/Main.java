@@ -7,17 +7,17 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        System.out.println(walk(23, 34));
-        System.out.println(walk(12, 45));
-        System.out.println(walk(67, -34));
-        System.out.println(walk(20, 46));
-        System.out.println(walk(45, -26));
+        System.out.println(walk(generateRandomAge(), 34));
+        System.out.println(walk(generateRandomAge(), 45));
+        System.out.println(walk(generateRandomAge(), -34));
+        System.out.println(walk(generateRandomAge(), 46));
+        System.out.println(walk(generateRandomAge(), -26));
 
 
-        System.out.println(generateRandomAge());
     }
 
     public static String walk(int age, int temperature) {
+
         if ((age < 45 || age > 20) || (temperature > -20 || temperature < 30)) {
             return "Можно идти гулять";
 
@@ -35,9 +35,11 @@ public class Main {
 
     }
 
-    public static String generateRandomAge() {
+    public static int generateRandomAge() {
         Random age = new Random();
-        int num = age.nextInt();
-        return ("Можно идти гулять");
+        int a = 0;
+        int b = 100;
+        int num = a + age.nextInt(b - a + 1);
+        return num;
     }
 }
